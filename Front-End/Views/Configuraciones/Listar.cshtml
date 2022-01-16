@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Front_End.Entidades.Configuraciones>
+
+@{
+    ViewBag.Title = "Listado autores";
+}
+
+<h2>Listado autores</h2>
+
+<br />
+<table class="table tablaB dt-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroLibrosPermitido)
+            </th>
+    
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroLibrosPermitido)
+                </td>                
+                <td>      
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

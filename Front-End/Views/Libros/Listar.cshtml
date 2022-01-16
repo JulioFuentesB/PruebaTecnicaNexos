@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Front_End.Entidades.Libros>
+
+@{
+    ViewBag.Title = "Listado";
+}
+<h2>Listado libros</h2>
+<p>
+    @Html.ActionLink("Crear nevo", "Crear")
+</p>
+<br />
+<table class="table tablaB  table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroDePaginas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAutorNavigation.NombreCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGeneroNavigation.Nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroDePaginas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAutorNavigation.NombreCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdGeneroNavigation.Nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Detalles", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

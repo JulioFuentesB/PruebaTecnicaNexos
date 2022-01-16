@@ -1,0 +1,64 @@
+﻿@model Front_End.Entidades.Libros
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Libro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroDePaginas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroDePaginas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAutorNavigation.NombreCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdAutorNavigation.NombreCompleto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdGeneroNavigation.Nombre)
+        </dt>
+
+        
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
+    @Html.ActionLink("Regresar a listado", "Listar")
+</p>

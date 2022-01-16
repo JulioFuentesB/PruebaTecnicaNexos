@@ -1,0 +1,110 @@
+﻿@model Front_End.Entidades.Autores
+
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear autor</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @if (Model != null && !Model.Error && !Model.RegistroExito)
+    {
+
+        <div class="form-horizontal">
+            <h4>Autores</h4>
+            <hr />
+            @Html.HiddenFor(m => m.Id)
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NombreCompleto, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NombreCompleto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NombreCompleto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CiudadDeProcedencia, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CiudadDeProcedencia, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CiudadDeProcedencia, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CorreoElectronico, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CorreoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CorreoElectronico, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                @Html.ActionLink("Regresar a listado", "Listar")
+            </div>
+        </div>
+    }
+    else if (Model != null && !Model.Error && Model.RegistroExito)
+    {
+        <br />
+        <br />
+        <div class="offset-2 col-md-8">
+            <div class="alert alert-success alert-top-border alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-check-all me-3 align-middle text-success"></i><strong>
+                    Éxito
+                </strong> - Datos registrados!
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <div class="row">
+            <div>
+                @Html.ActionLink("Regresar a listado", "Listar")
+            </div>
+        </div>
+    }
+    else if (Model != null && Model.Error && !Model.RegistroExito)
+    {
+        <br />
+        <br />
+        <div class="offset-2 col-md-8">
+            <div class="alert alert-danger alert-top-border alert-dismissible fade show" role="alert">
+                <i class="mdi mdi-block-helper me-3 align-middle text-danger"></i><strong>
+                    Error
+                </strong> - @Model.MensajeError
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div>
+            @Html.ActionLink("Regresar a listado", "Listar")
+        </div>
+    }
+
+
+}
+
+
+
+
