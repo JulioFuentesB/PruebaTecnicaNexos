@@ -84,7 +84,7 @@ namespace Back_End.Repositorio
     }
 
 
-    /*interfas*/
+    /*interfaz*/
     public interface IConfiguracionesRep
     {
         Task<List<Configuraciones>> ConsultarAsync();

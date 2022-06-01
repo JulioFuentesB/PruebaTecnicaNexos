@@ -132,7 +132,7 @@ namespace Back_End.Repositorio
     }
 
 
-    /*interfas*/
+    /*interfaz*/
     public interface ILibrosRep
     {
         Task<List<Libros>> ConsultarAsync();

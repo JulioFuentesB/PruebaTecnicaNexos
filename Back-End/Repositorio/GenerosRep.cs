@@ -66,7 +66,7 @@ namespace Back_End.Repositorio
     }
 
 
-    /*interfas*/
+    /*interfaz*/
     public interface IGenerosRep
     {
         Task<List<Generos>> ConsultarAsync();

@@ -16,7 +16,7 @@ namespace Back_End.Controllers
     public class ConfiguracionesController : ControllerBase
     {
         /// <summary>
-        /// Inyeccionde dependencia para acceder a los metodods de la interfas
+        /// Inyeccionde dependencia para acceder a los metodods de la interfaz
         /// </summary>
         private readonly IConfiguracionesRep _repositorio;
         private readonly IMapper _mapper;

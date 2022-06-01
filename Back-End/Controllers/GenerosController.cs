@@ -16,7 +16,7 @@ namespace Back_End.Controllers
     public class GenerosController : ControllerBase
     {
         /// <summary>
-        /// Inyeccionde dependencia para acceder a los metodods de la interfas
+        /// Inyeccionde dependencia para acceder a los metodods de la interfaz
         /// </summary>
         private readonly IGenerosRep _repositorio;
         private readonly IMapper _mapper;

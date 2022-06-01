@@ -130,7 +130,7 @@ namespace Back_End.Repositorio
     }
 
 
-    /*interfas*/
+    /*interfaz*/
     public interface IAutoresRep
     {
         Task<List<Autores>> ConsultarAsync();

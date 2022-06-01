@@ -45,13 +45,13 @@ namespace Back_End
                 configuration.CreateMap<Configuraciones, ConfiguracionesDTO>().ReverseMap();
             }, typeof(Startup));
 
-            //regisro de interfas y repositorio, servicios
+            //regisro de interfaz y repositorio, servicios
             services.AddTransient<IAutoresRep, AutoresRep>();
             services.AddTransient<ILibrosRep, LibrosRep>();
             services.AddTransient<IGenerosRep, GenerosRep>();
             services.AddTransient<IConfiguracionesRep, ConfiguracionesRep>();
 
-            //interfas para api
+            //interfaz para api
             services.AddControllers();         
 
             services.AddSwaggerGen(c =>

@@ -16,7 +16,7 @@ namespace Back_End.Controllers
     public class AutoresController : ControllerBase
     {
         /// <summary>
-        /// Inyeccionde dependencia para acceder a los metodods de la interfas
+        /// Inyeccionde dependencia para acceder a los metodods de la interfaz
         /// </summary>
         private readonly IAutoresRep _repositorio;
         private readonly IMapper _mapper;

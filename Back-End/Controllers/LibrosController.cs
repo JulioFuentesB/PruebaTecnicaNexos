@@ -17,7 +17,7 @@ namespace Back_End.Controllers
     public class LibrosController : ControllerBase
     {
         /// <summary>
-        /// Inyeccionde dependencia para acceder a los metodods de la interfas
+        /// Inyeccionde dependencia para acceder a los metodods de la interfaz
         /// </summary>
         private readonly ILibrosRep _repositorio;
         private readonly IMapper _mapper;
